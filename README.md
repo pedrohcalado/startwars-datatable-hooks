@@ -6,6 +6,14 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ---
 
+### Entrega
+
+  - Projeto individual.
+
+  - Serão dois dias de projeto.
+  
+  - O projeto tem até a seguinte data: `09/09/2020 - 14:00h`. Para ser entregue a avaliação final.
+
 ## Instruções para entregar seu projeto:
 
 ### ANTES DE COMEÇAR A DESENVOLVER:
