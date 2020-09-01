@@ -5,12 +5,18 @@ export const StarWarsContext = createContext();
 
 const ContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
-
+  const [name, setName] = useState('');
+  const [filterByNumericValues, setNumericFilter] = useState([])
   const context = {
     data,
-    setData,
-  };
-
+    sets: { setData, setName, setNumericFilter },
+    filters: {
+      filterByName: {
+        name,
+      },
+      filterByNumericValues,
+    }
+  }
   return (
     <StarWarsContext.Provider value={context}>{children}</StarWarsContext.Provider>
   );

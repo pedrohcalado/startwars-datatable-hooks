@@ -1,0 +1,30 @@
+import React, { useEffect, useContext } from 'react';
+import fetchAPI from '../../services/swapiAPI';
+import { StarWarsContext } from '../../context/StarWarsContext';
+import TableHeader from './TableHeader';
+import TableBody from './TableBody';
+import NameFilter from '../Filters/NameFilter';
+import NumericFilter from '../Filters/NumericFilter';
+
+export default function Table() {
+  const { sets: { setData } } = useContext(StarWarsContext);
+  // Referência https://blog.rocketseat.com.br/react-hooks/
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetchAPI().then((data) => data.results);
+      setData(response);
+    }
+    fetchData();
+  }, [setData]);
+
+  return (
+    <div>
+      <NameFilter />
+      <NumericFilter />
+      <table>
+        <TableHeader />
+        <TableBody />
+      </table>
+    </div>
+  );
+}

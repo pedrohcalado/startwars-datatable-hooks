@@ -28,7 +28,7 @@ const mockFetch = () => {
     }));
 }
 
-describe('Fazer uma requisição para o endpoint `/planets` da API de Star Wars e preencher uma tabela com os dados retornados, com exceção dos da coluna `residents`', () => {
+describe.only('Fazer uma requisição para o endpoint `/planets` da API de Star Wars e preencher uma tabela com os dados retornados, com exceção dos da coluna `residents`', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
@@ -84,7 +84,7 @@ describe('Fazer uma requisição para o endpoint `/planets` da API de Star Wars 
   });
 });
 
-describe('Sua página deve ter um campo de texto que filtra a tabela para somente exibir planetas cujos nomes incluam o texto digitado', () => {
+describe.only('Sua página deve ter um campo de texto que filtra a tabela para somente exibir planetas cujos nomes incluam o texto digitado', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
@@ -158,7 +158,7 @@ describe('Sua página deve ter um campo de texto que filtra a tabela para soment
   });
 });
 
-describe('Sua página deve ter um filtro para valores numéricos', () => {
+describe.only('Sua página deve ter um filtro para valores numéricos', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
@@ -248,7 +248,7 @@ describe('Sua página deve ter um filtro para valores numéricos', () => {
   });
 });
 
-describe('Sua página não deve utilizar filtros repetidos', () => {
+describe.only('Sua página não deve utilizar filtros repetidos', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
