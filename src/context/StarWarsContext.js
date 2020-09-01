@@ -1,5 +1,16 @@
-const { createContext } = require("react");
+import React, { createContext, useState } from 'react';
 
-const StarWarsContext = createContext();
+export const StarWarsContext = createContext();
 
-export default StarWarsContext;
+export default ({ children }) => {
+  const [data, setData] = useState([]);
+
+  const context = {
+    data: data,
+    setData: setData,
+  };
+
+  return (
+    <StarWarsContext.Provider value={context}>{children}</StarWarsContext.Provider>
+  );
+}
