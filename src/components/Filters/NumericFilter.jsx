@@ -30,7 +30,7 @@ function handleClick(event, setNumericFilter) {
       column,
       comparison,
       value,
-    }
+    },
   ]);
 }
 
@@ -48,7 +48,10 @@ function handleColumnOptions(filterByNumericValues) {
 }
 
 export default function NumericFilter() {
-  const { sets: { setNumericFilter }, filters: { filterByNumericValues } } = useContext(StarWarsContext);
+  const {
+    sets: { setNumericFilter },
+    filters: { filterByNumericValues },
+  } = useContext(StarWarsContext);
   return (
     <div>
       <select data-testid="column-filter" id="column-filter">
