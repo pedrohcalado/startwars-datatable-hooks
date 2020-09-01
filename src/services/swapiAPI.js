@@ -10,5 +10,3 @@ const fetchAPI = () =>
   );
 
 export default fetchAPI;
-
-// fetchAPI().then(data => console.log(data));

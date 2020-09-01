@@ -8,11 +8,11 @@ export default function Table() {
   const { setData } = useContext(StarWarsContext);
   useEffect(() => {
     async function fetchPlanets() {
-      const response = await fetchAPI().then(data => data.results);
+      const response = await fetchAPI().then((data) => data.results);
       setData(response);
     }
     fetchPlanets();
-  },[setData]);
+  }, [setData]);
 
   return (
     <div>

@@ -7,15 +7,15 @@ export default function TableBody() {
   return (
     <tbody>
       {data.map((planet) =>
-          <tr key={planet.name}>
-            {
-              headerData.map((item) =>
-                <td key={item}>
-                  {planet[item]}
-                </td>)
-            }
-          </tr>,
-        )}
+        <tr key={planet.name}>
+          {
+            headerData.map((item) =>
+              <td key={item}>
+                {planet[item]}
+              </td>)
+          }
+        </tr>,
+      )}
     </tbody>
   );
 }
