@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import { headerData } from '../Table/TableHeader';
 import { StarWarsContext } from '../../context/StarWarsContext';
 
-export function applyOrder(filteredPlanets, order) {
-  filteredPlanets = filteredPlanets.sort(function (a, b) {
+export function applyOrder(planets, order) {
+  let filteredPlanets = planets;
+  filteredPlanets.sort(function (a, b) {
     return (order.sort === 'ASC') ?
     a[order.column].localeCompare(b[order.column]) :
     b[order.column].localeCompare(a[order.column]);
   });
-  filteredPlanets = filteredPlanets.sort(function (a, b) {
+  filteredPlanets.sort(function (a, b) {
     return (order.sort === 'ASC') ?
     a[order.column] - b[order.column] :
     b[order.column] - a[order.column];
