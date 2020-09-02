@@ -4,7 +4,7 @@ import { headerData } from '../Table/TableHeader';
 import { StarWarsContext } from '../../context/StarWarsContext';
 
 export function applyOrder(planets, order) {
-  let filteredPlanets = planets;
+  const filteredPlanets = planets;
   filteredPlanets.sort(function (a, b) {
     return (order.sort === 'ASC') ?
     a[order.column].localeCompare(b[order.column]) :
@@ -56,8 +56,8 @@ export default function Order() {
         data-testid="column-sort"
         onChange={(e) => setColumn(e.target.value)}
       >
-        {headerData.map((column) =>
-          <option key={column}>{column}</option>,
+        {headerData.map((col) =>
+          <option key={col}>{col}</option>,
         )}
       </select>
       <ProvideInputs setSort={setSort} />
