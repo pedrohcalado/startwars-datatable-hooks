@@ -3,7 +3,7 @@ import { StarWarsContext } from '../../context/StarWarsContext';
 
 export default function DeleteNumericFilter() {
   const {
-    sets: { 
+    sets: {
       setNumericFilter,
     },
     filters: {
@@ -24,7 +24,7 @@ export default function DeleteNumericFilter() {
           <span>Comparison: {comparison} </span>
           <span>Value: {value} </span>
           <button onClick={(e) => handleClick(e)} value={index}>X</button>
-        </div>
+        </div>,
       )}
     </div>
   );

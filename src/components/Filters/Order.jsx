@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import PropTypes from 'prop-types';
 import { headerData } from '../Table/TableHeader';
 import { StarWarsContext } from '../../context/StarWarsContext';
 
@@ -8,20 +9,24 @@ function ProvideInputs(props) {
       <label htmlFor="ASC">
         Ascendent
         <input
-          type="radio" data-testid="column-sort-input-asc" value="ASC"
+          type="radio"
+          data-testid="column-sort-input-asc"
+          value="ASC"
           id="ASC"
           name="order"
-          onChange={(e) => props.setSort(e.target.value) }
+          onChange={(e) => props.setSort(e.target.value)}
         />
       </label>
       <label htmlFor="DESC">
         Descendent
-        <input 
-        type="radio" data-testid="column-sort-input-desc" value="DESC"
-        id="DESC"
-        name="order"
-        onChange={(e) => props.setSort(e.target.value) }
-      />
+        <input
+          type="radio"
+          data-testid="column-sort-input-desc"
+          value="DESC"
+          id="DESC"
+          name="order"
+          onChange={(e) => props.setSort(e.target.value)}
+        />
       </label>
     </div>
   );
@@ -38,7 +43,7 @@ export default function Order() {
         onChange={(e) => setColumn(e.target.value)}
       >
         {headerData.map((column) =>
-          <option key={column}>{column}</option>
+          <option key={column}>{column}</option>,
         )}
       </select>
       <ProvideInputs setSort={setSort} />
@@ -46,11 +51,15 @@ export default function Order() {
         data-testid="column-sort-button"
         onClick={() => setOrder({
           column,
-          sort
+          sort,
         })}
       >
         Submit
       </button>
     </div>
   );
+}
+
+ProvideInputs.propTypes = {
+  setSort: PropTypes.func.isRequired,
 }
