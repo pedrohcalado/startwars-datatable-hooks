@@ -5,6 +5,8 @@ import TableHeader from './TableHeader';
 import TableBody from './TableBody';
 import NameFilter from '../Filters/NameFilter';
 import NumericFilter from '../Filters/NumericFilter';
+import DeleteNumericFilter from '../Filters/DeleteNumericFilter';
+import Order from '../Filters/Order';
 
 export default function Table() {
   const { sets: { setData } } = useContext(StarWarsContext);
@@ -21,6 +23,8 @@ export default function Table() {
     <div>
       <NameFilter />
       <NumericFilter />
+      <DeleteNumericFilter />
+      <Order />
       <table>
         <TableHeader />
         <TableBody />
