@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { StarWarsContext } from '../../context/StarWarsContext';
 import { headerData } from './TableHeader';
 import { filterNumbers } from '../Filters/NumericFilter';
+import { applyOrder } from '../Filters/Order';
+
 
 export default function TableBody() {
   const {
@@ -14,11 +16,7 @@ export default function TableBody() {
     planet.name.includes(filterByName.name));
   }
   filteredPlanets = filterNumbers(filteredPlanets, filterByNumericValues);
-  filteredPlanets = filteredPlanets.sort(function (a, b) { return (order.sort === 'ASC') ?
-   a[order.column].localeCompare(b[order.column]) :
-   b[order.column].localeCompare(a[order.column])});
-  filteredPlanets = filteredPlanets.sort(function (a, b) { return (order.sort === 'ASC') ?
-   a[order.column] - b[order.column] : b[order.column] - a[order.column]});
+  applyOrder(filteredPlanets, order);
   return (
     <tbody>
       {filteredPlanets.map((planet) =>
