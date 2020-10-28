@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { StarWarsContext } from '../../context/StarWarsContext';
 import { headerData } from './TableHeader';
-import { filterNumbers } from '../Filters/NumericFilter';
-import { applyOrder } from '../Filters/Order';
+import applyFilterNumbers from '../../utils/applyFilterNumbers';
+import applyOrder from '../../utils/applyOrder';
+import applyFilterByName from '../../utils/applyFilterByName';
 
 
 export default function TableBody() {
@@ -10,13 +11,18 @@ export default function TableBody() {
     data,
     filters: { filterByName, filterByNumericValues, order },
   } = useContext(StarWarsContext);
+
   let filteredPlanets = data;
-  if (filterByName.name !== '') {
-    filteredPlanets = filteredPlanets.filter((planet) =>
-    planet.name.includes(filterByName.name));
-  }
-  filteredPlanets = filterNumbers(filteredPlanets, filterByNumericValues);
+
+  // apply filter by name
+  filteredPlanets = applyFilterByName(filteredPlanets, filterByName);
+
+  // apply filter by numbers
+  filteredPlanets = applyFilterNumbers(filteredPlanets, filterByNumericValues);
+
+  // apply order
   applyOrder(filteredPlanets, order);
+
   return (
     <tbody>
       {filteredPlanets.map((planet) =>

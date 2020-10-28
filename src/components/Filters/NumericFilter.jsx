@@ -1,26 +1,10 @@
 import React, { useContext } from 'react';
 import { StarWarsContext } from '../../context/StarWarsContext';
 
-export function filterNumbers(filteredPlanets, filterByNumericValues) {
-  let planets = filteredPlanets;
-  for (let i = 0; i < filterByNumericValues.length; i += 1) {
-    if (filterByNumericValues[i].comparison === 'maior que') {
-      planets = planets.filter((planet) =>
-        Number(planet[filterByNumericValues[i].column]) > Number(filterByNumericValues[i].value));
-    } else if (filterByNumericValues[i].comparison === 'menor que') {
-      planets = planets.filter((planet) =>
-        Number(planet[filterByNumericValues[i].column]) < Number(filterByNumericValues[i].value));
-    } else if (filterByNumericValues[i].comparison === 'igual a') {
-      planets = planets.filter((planet) =>
-        Number(planet[filterByNumericValues[i].column]) === Number(filterByNumericValues[i].value));
-    }
-  }
-  return planets;
-}
-
 function handleClick(event, setNumericFilter) {
+
   event.preventDefault();
-  // referência: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_select_value2
+
   const column = document.getElementById('column-filter').value;
   const comparison = document.getElementById('comparison-filter').value;
   const value = document.getElementById('value-filter').value;

@@ -7,8 +7,6 @@ const ContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [name, setName] = useState('');
   const [filterByNumericValues, setNumericFilter] = useState([]);
-  // const [column, setColumn] = useState('name');
-  // const [sort, setSort] = useState('ASC');
   const [order, setOrder] = useState({
     column: 'name',
     sort: 'ASC',
