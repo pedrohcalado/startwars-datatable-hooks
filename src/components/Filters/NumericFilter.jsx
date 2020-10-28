@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { StarWarsContext } from '../../context/StarWarsContext';
 
-function handleClick(event, setNumericFilter) {
-
-  event.preventDefault();
-
+function handleClick(setNumericFilter) {
   const column = document.getElementById('column-filter').value;
   const comparison = document.getElementById('comparison-filter').value;
   const value = document.getElementById('value-filter').value;
+
+  column !== "column" &&
+  comparison !== "comparison" &&
+  value &&
   setNumericFilter((filter) => [
     ...filter,
     {
@@ -49,7 +50,7 @@ export default function NumericFilter() {
       </select>
       <input type="number" data-testid="value-filter" id="value-filter" />
       <button
-        onClick={(event) => handleClick(event, setNumericFilter)}
+        onClick={(event) => handleClick(setNumericFilter)}
         data-testid="button-filter"
       >Filtrar</button>
     </div>

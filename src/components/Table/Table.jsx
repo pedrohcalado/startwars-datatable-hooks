@@ -9,8 +9,9 @@ import DeleteNumericFilter from '../Filters/DeleteNumericFilter';
 import Order from '../Filters/Order';
 
 export default function Table() {
+
   const { sets: { setData } } = useContext(StarWarsContext);
-  // Referência https://blog.rocketseat.com.br/react-hooks/
+
   useEffect(() => {
     async function fetchData() {
       const response = await fetchAPI().then((data) => data.results);

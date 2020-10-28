@@ -5,7 +5,6 @@ import applyFilterNumbers from '../../utils/applyFilterNumbers';
 import applyOrder from '../../utils/applyOrder';
 import applyFilterByName from '../../utils/applyFilterByName';
 
-
 export default function TableBody() {
   const {
     data,
@@ -30,7 +29,7 @@ export default function TableBody() {
           {
             headerData.map((item) =>
               <td key={item} data-testid={item === 'name' ? 'planet-name' : ''}>
-                {planet[item]}
+                {(item === 'created' || item === 'edited') ? new Date(planet[item]).toLocaleString('pt-br') : planet[item]}
               </td>)
           }
         </tr>,
