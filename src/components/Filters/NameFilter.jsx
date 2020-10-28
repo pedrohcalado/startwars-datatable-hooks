@@ -6,7 +6,7 @@ export default function NameFilter() {
   const { sets: { setName } } = useContext(StarWarsContext);
   return (
     <div>
-      <label htmlFor="name">Procurar: </label>
+      <label htmlFor="name">Search by name: </label>
       <input
         name="name"
         type="text"

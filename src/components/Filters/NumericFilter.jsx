@@ -6,8 +6,8 @@ function handleClick(setNumericFilter) {
   const comparison = document.getElementById('comparison-filter').value;
   const value = document.getElementById('value-filter').value;
 
-  column !== "column" &&
-  comparison !== "comparison" &&
+  column !== "--column--" &&
+  comparison !== "--comparison--" &&
   value &&
   setNumericFilter((filter) => [
     ...filter,
@@ -22,7 +22,7 @@ function handleClick(setNumericFilter) {
 function handleColumnOptions(filterByNumericValues) {
   const selectedFilterColumns = filterByNumericValues.map((filter) => filter.column);
   let columns = [
-    'column',
+    '--column--',
     'population',
     'orbital_period',
     'diameter',
@@ -43,16 +43,16 @@ export default function NumericFilter() {
         {handleColumnOptions(filterByNumericValues)}
       </select>
       <select data-testid="comparison-filter" id="comparison-filter">
-        <option value="comparison">comparação</option>
-        <option value="maior que">maior que</option>
-        <option value="menor que">menor que</option>
-        <option value="igual a">igual a</option>
+        <option value="--comparison--">--comparison--</option>
+        <option value="bigger than">bigger than</option>
+        <option value="less than">less than</option>
+        <option value="equal to">equal to</option>
       </select>
       <input type="number" data-testid="value-filter" id="value-filter" />
       <button
         onClick={(event) => handleClick(setNumericFilter)}
         data-testid="button-filter"
-      >Filtrar</button>
+      >Filter</button>
     </div>
   );
 }
