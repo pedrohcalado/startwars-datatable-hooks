@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { headerData } from '../Table/TableHeader';
 import { StarWarsContext } from '../../context/StarWarsContext';
+import './Order.css';
 
 function ProvideInputs(props) {
   return (
@@ -37,7 +38,7 @@ export default function Order() {
   const [sort, setSort] = useState('ASC');
   const { sets: { setOrder } } = useContext(StarWarsContext);
   return (
-    <div>
+    <div className="order--main-container">
       <select
         data-testid="column-sort"
         onChange={(e) => setColumn(e.target.value)}
@@ -54,7 +55,7 @@ export default function Order() {
           sort,
         })}
       >
-        Submit
+        Apply
       </button>
     </div>
   );

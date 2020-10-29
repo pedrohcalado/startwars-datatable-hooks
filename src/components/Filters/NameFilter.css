@@ -1,0 +1,11 @@
+.nf--main-container {
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.nf--main-container input {
+  outline: none;
+}

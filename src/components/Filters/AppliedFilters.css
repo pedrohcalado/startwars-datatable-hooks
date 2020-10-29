@@ -1,0 +1,25 @@
+.af--main-container {
+  padding-bottom: 5px;
+  width: 40%;
+}
+.af--filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.each-filter {
+  background-color:rgba(19, 18, 18, 0.3);
+  border-radius: 5px;
+  margin: 3px auto;
+  padding: 2px 7px;
+}
+
+.each-filter button {
+  background-color: rgb(179, 29, 29);
+  border: none;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  margin-left: 7px;
+}

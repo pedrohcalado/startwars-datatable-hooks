@@ -1,0 +1,30 @@
+.num-f--main-container {
+  align-items: center;
+  border: 1px solid orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.num-f--select {
+  /* border: 1px solid blue; */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 230px;
+}
+
+.num-f--select select {
+  outline: none;
+}
+
+.num-f--main-container input {
+  margin-bottom: 10px;
+  outline: none;
+  width: 220px;
+}
+
+.num-f--main-container button {
+  width: 100px;
+}

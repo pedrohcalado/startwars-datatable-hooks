@@ -1,0 +1,19 @@
+.order--main-container {
+  align-items: center;
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.order--main-container select {
+  margin-bottom: 10px;
+  outline: none;
+  width: 100%;
+}
+
+.order--main-container button {
+  margin-top: 10px;
+  width: 100px;
+}

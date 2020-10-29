@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { StarWarsContext } from '../../context/StarWarsContext';
+import './NumericFilter.css';
 
 function handleClick(setNumericFilter) {
   const column = document.getElementById('column-filter').value;
@@ -38,17 +39,19 @@ export default function NumericFilter() {
     filters: { filterByNumericValues },
   } = useContext(StarWarsContext);
   return (
-    <div>
-      <select data-testid="column-filter" id="column-filter">
-        {handleColumnOptions(filterByNumericValues)}
-      </select>
-      <select data-testid="comparison-filter" id="comparison-filter">
-        <option value="--comparison--">--comparison--</option>
-        <option value="bigger than">bigger than</option>
-        <option value="less than">less than</option>
-        <option value="equal to">equal to</option>
-      </select>
-      <input type="number" data-testid="value-filter" id="value-filter" />
+    <div className="num-f--main-container">
+      <div className="num-f--select">
+        <select data-testid="column-filter" id="column-filter">
+          {handleColumnOptions(filterByNumericValues)}
+        </select>
+        <select data-testid="comparison-filter" id="comparison-filter">
+          <option value="--comparison--">--comparison--</option>
+          <option value="bigger than">bigger than</option>
+          <option value="less than">less than</option>
+          <option value="equal to">equal to</option>
+        </select>
+      </div>
+      <input type="number" data-testid="value-filter" id="value-filter" placeholder="Type a value" />
       <button
         onClick={(event) => handleClick(setNumericFilter)}
         data-testid="button-filter"
