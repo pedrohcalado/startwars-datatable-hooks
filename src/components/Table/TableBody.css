@@ -1,0 +1,8 @@
+tbody td {
+  font-size: 14px;
+  padding: 3px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgb(242, 242, 242);
+}

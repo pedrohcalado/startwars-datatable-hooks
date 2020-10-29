@@ -1,0 +1,8 @@
+thead {
+  background-color: rgb(2, 62, 110);
+  color: rgb(255, 255, 255);
+}
+
+thead th {
+  padding: 15px 5px;
+}

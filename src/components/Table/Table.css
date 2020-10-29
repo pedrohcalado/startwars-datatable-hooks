@@ -9,3 +9,10 @@
 .table {
   overflow: scroll;
 }
+
+table {
+
+  width: 100vw;
+}
+
+

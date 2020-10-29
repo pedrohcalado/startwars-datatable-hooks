@@ -4,6 +4,7 @@ import { headerData } from './TableHeader';
 import applyFilterNumbers from '../../utils/applyFilterNumbers';
 import applyOrder from '../../utils/applyOrder';
 import applyFilterByName from '../../utils/applyFilterByName';
+import './TableBody.css';
 
 export default function TableBody() {
   const {
