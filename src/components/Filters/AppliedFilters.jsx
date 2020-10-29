@@ -19,7 +19,7 @@ export default function DeleteNumericFilter() {
 
   return (
     <div className="af--main-container">
-      <h3>Filters:</h3>
+      <p>Filters:</p>
       <div className="af--filters">
         {filterByNumericValues.map(({ column, comparison, value }, index) =>
           <div data-testid="filter" key={column} className="each-filter">

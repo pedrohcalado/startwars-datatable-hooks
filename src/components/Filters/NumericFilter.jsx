@@ -40,6 +40,7 @@ export default function NumericFilter() {
   } = useContext(StarWarsContext);
   return (
     <div className="num-f--main-container">
+      <p>Filter by number:</p>
       <div className="num-f--select">
         <select data-testid="column-filter" id="column-filter">
           {handleColumnOptions(filterByNumericValues)}

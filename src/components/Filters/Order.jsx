@@ -39,6 +39,7 @@ export default function Order() {
   const { sets: { setOrder } } = useContext(StarWarsContext);
   return (
     <div className="order--main-container">
+      <p>Filter order:</p>
       <select
         data-testid="column-sort"
         onChange={(e) => setColumn(e.target.value)}
